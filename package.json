@@ -1,0 +1,24 @@
+{
+  "name": "vimeo-sync",
+  "version": "0.1.0",
+  "description": "AWS Lambda function to sync podcasts with Vimeo.",
+  "main": "index.js",
+  "scripts": {
+    "start": "./run --help",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Albert Martin <albert@bethel.io>",
+  "license": "MIT",
+  "engines": {
+    "node": "4.3.x",
+    "npm": "3.3.x"
+  },
+  "dependencies": {
+    "moment": "^2.17.1",
+    "request": "^2.79.0",
+    "vimeo": "^1.2.0"
+  },
+  "devDependencies": {
+    "commander": "^2.9.0"
+  }
+}

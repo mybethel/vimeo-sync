@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+const program = require('commander');
+const info = require('./package.json');
+
+program.version(info.version)
+  .option('--token <token>', 'Access token for user')
+  .option('--key <key>', 'Developer access key')
+  .option('--secret <secret>', 'Developer secret key')
+  .option('--tags <tags>', 'Comma-separated tags to sync')
+  .parse(process.argv);
+
+const lambda = require('./index.js');
+
+lambda.handler({
+  tags: program.tags,
+  token: program.token,
+  auth: {
+    token: program.token,
+    secret: program.secret,
+  }
+}, {
+  fail: console.error,
+  succeed: console.log,
+});
